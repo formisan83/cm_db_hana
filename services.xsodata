@@ -1,0 +1,161 @@
+service { 
+    /* New Tables*/  
+    "CONTRACT_MANAGEMENT"."SYS_CONFIG" as "SysConfig";          
+    "CONTRACT_MANAGEMENT"."GDL_STATUS_T" as "GdLStatusT";          
+    "CONTRACT_MANAGEMENT"."GDL_STATUS" as "GdLStatus";     
+    "CONTRACT_MANAGEMENT"."RA_ACCOUNTING_CONS_COMMON" as "RaAccountingConsCommon";     
+    "CONTRACT_MANAGEMENT"."RA_ACCOUNTING_UM" as "UmList";    
+    "CONTRACT_MANAGEMENT"."GDL" as "GdL";    
+    "CONTRACT_MANAGEMENT"."RA_DAILY_ODMOP_ACCOUNTING" as "RaDailyOdMOpAccounting";     
+    "CONTRACT_MANAGEMENT"."REL_UB_TO_AFNAM" as "RelUbToAfnam";    
+    "CONTRACT_MANAGEMENT"."RA_DAILY_STATES_T" as "RaDailyStateT";  
+    "CONTRACT_MANAGEMENT"."RA_DAILY_HEAD" as "RaDailyHead";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAILS" as "RaDailyDetails";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_ATTACH" as "RaDailyDetailAttach";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_NOTES" as "RaDailyDetailNotes";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_WORKER" as "RaDailyDetailWorker"; 
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_VEHICLE" as "RaDailyDetailVehicle";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_EQUIPMENT" as "RaDailyDetailEquipment";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_ATTACH_NONCORE_SERVICES" as "RaAttachNonCoreServices";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_NOTES_NONCORE_SERVICES" as "RaNotesNonCoreServices";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_WORKER_NONCORE_SERVICES" as "RaWorkerNonCoreServices";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_VEHICLE_NONCORE_SERVICES" as "RaVehicleNonCoreServices";
+    "CONTRACT_MANAGEMENT"."RA_DAILY_DETAIL_EQUIPMENT_NONCORE_SERVICES" as "RaEquipmentNonCoreServices";
+    "CONTRACT_MANAGEMENT"."REL_ODM_ODA_CONTRACT" as "RelOdmOdaContract";     
+    "CONTRACT_MANAGEMENT"."WORK_CENTERS" as "WorkCentersT";                      
+    "CONTRACT_MANAGEMENT"."ODM_OPERATIONS" as "OdmOperationsT";                        
+    "CONTRACT_MANAGEMENT"."CUSTCONFIG_T" as "CustconfigT";                  
+    "CONTRACT_MANAGEMENT"."ENQUEUE_T" as "EnqueueT";                   
+    "CONTRACT_MANAGEMENT"."WORKER_ROLES_T" as "WorkerRolesT";                   
+    "CONTRACT_MANAGEMENT"."WORKER_ROLES" as "WorkerRoles";     
+    "CONTRACT_MANAGEMENT"."WORKER_CONTRACT_TYPES_T" as "WorkerContractTypesT";  
+    "CONTRACT_MANAGEMENT"."WORKER_CONTRACT_TYPES" as "WorkerContractTypes";
+    "CONTRACT_MANAGEMENT"."WORKERS" as "Workers";  
+    "CONTRACT_MANAGEMENT"."SUPPLIERS" as "Suppliers";   
+    "CONTRACT_MANAGEMENT"."DOC_TYPES_T" as "DocTypesT"; 
+    "CONTRACT_MANAGEMENT"."DOC_TYPES" as "DocTypes"; 
+    "CONTRACT_MANAGEMENT"."DOCUMENTS" as "Documents";
+    "CONTRACT_MANAGEMENT"."COMMON_DOCUMENTS" as "CommonDocuments";
+    "CONTRACT_MANAGEMENT"."ATTACHMENT_STATUS_T" as "AttachmentStatusT";
+    "CONTRACT_MANAGEMENT"."ATTACHMENT_STATUS" as "AttachmentStatus";
+    "CONTRACT_MANAGEMENT"."ATTACHMENTS" as "Attachments";  
+    "CONTRACT_MANAGEMENT"."CONTRACTS" as "Contracts"; 
+    "CONTRACT_MANAGEMENT"."FORCED_COMPLETED_DOC" as "ForcedCompletedDoc"; 
+    "CONTRACT_MANAGEMENT"."CONTRACT_ASS_STATUS_T" as "ContractAssStatusT";
+    "CONTRACT_MANAGEMENT"."CONTRACT_ASS_STATUS" as "ContractAssStatus"; 
+    "CONTRACT_MANAGEMENT"."CONTRACT_ASSOCIATIONS" as "ContractAssociations";
+    "CONTRACT_MANAGEMENT"."CONTRACT_SUPERVISORS" as "ContractSupervisors";   
+    
+    "CONTRACT_MANAGEMENT"."CS_ROLES_T" as "CsRolesT";
+    "CONTRACT_MANAGEMENT"."CS_ROLES" as "CsRoles";  
+    "CONTRACT_MANAGEMENT"."CONTRACT_ASSOCIATION_DETAILS" as "ContractAssociationDetails";
+    "CONTRACT_MANAGEMENT"."GREEN_SHEETS" as "GreenSheets";
+    "CONTRACT_MANAGEMENT"."VEHICLES" as "Vehicles";
+    "CONTRACT_MANAGEMENT"."VEHICLES_TYPES" as "VehiclesTypes";
+    "CONTRACT_MANAGEMENT"."VEHICLES_TYPES_T" as "VehiclesTypesT";
+    "CONTRACT_MANAGEMENT"."EQUIPMENT" as "Equipment";  
+    "CONTRACT_MANAGEMENT"."GROUPS" as "Groups"; 
+    "CONTRACT_MANAGEMENT"."REL_SUPPLIER_WORKER" as "RelSupplierWorker"; 
+    "CONTRACT_MANAGEMENT"."REL_CONTRACT_WORKER" as "RelContractWorker";
+    "CONTRACT_MANAGEMENT"."REL_CONTRACT_VEHICLE" as "RelContractVehicle";
+    "CONTRACT_MANAGEMENT"."REL_CONTRACT_EQUIPMENT" as "RelContractEquipment";
+    "CONTRACT_MANAGEMENT"."REL_WORKER_ROLES" as "RelWorkersRoles";
+    "CONTRACT_MANAGEMENT"."REL_WORKER_QUALIFICATIONS" as "RelWorkersQualifications";
+    "CONTRACT_MANAGEMENT"."REL_DOCUMENT_ATTACHMENTS" as "RelDocumentAttachment"; 
+    "CONTRACT_MANAGEMENT"."REL_DOCUMENT_RTS_CONTRACT" as "RelContractDocuments"; 
+    "CONTRACT_MANAGEMENT"."REL_SUPPLIER_VEHICLES" as "RelSupplierVehicles";
+    "CONTRACT_MANAGEMENT"."REL_SUPPLIER_EQUIPMENT" as "RelSupplierEquipment";
+    "CONTRACT_MANAGEMENT"."REL_MAXIMAL_DOCUMENT" as "RelMaximalDocument"; 
+    "CONTRACT_MANAGEMENT"."REL_PLANT_COMMON_DOC2" as "RelPlantCommonDoc";
+    "CONTRACT_MANAGEMENT"."REL_GROUPS_CS" as "RelGroupCS";   
+    /* New Views */ 
+    "CONTRACT_MANAGEMENT"."V_CONTRACT_TO_CS_FOR_GDL" as "ViewContractToCsForGdL"  
+        keys ("IdContract");
+    "CONTRACT_MANAGEMENT"."V_CONTRACT_TO_CS_FOR_GDL_SUPPLIER_SIDE" as "ViewContractToCsForGdLSupplierSide"  
+        keys ("IdContract"); 
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL" as "ViewRaDailyDetail"  
+        keys ("UuidRaDailyDetail");
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_ATTACH" as "ViewRaDailyDetailAttach"
+        keys ("UuidRaDailyDetailAttach");
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_NOTES" as "ViewRaDailyDetailNotes"  
+        keys ("UuidRaDailyDetailNote");  
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_WORKERS" as "ViewRaDailyDetailWorkers" 
+        keys ("UuidRaDailyDetailWorker");
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_VEHICLE" as "ViewRaDailyDetailVehicles" 
+        keys ("UuidRaDailyDetailVehicle");
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_EQUIPMENT" as "ViewRaDailyDetailEquipments" 
+        keys ("UuidRaDailyDetailEquipment");
+    "CONTRACT_MANAGEMENT"."V_REL_ODMOPERATIONS_OF_GDL_ANNOTATIONS" as "ViewRelOdMOperationsOfGdLAnnotations" 
+        keys ("UuidGdL");
+    "CONTRACT_MANAGEMENT"."V_RA_DAILY_HEAD_FOR_CALENDAR_GDL_SUPPLIER_SIDE" as "ViewRaDailyHeadForCalendarGdLSupplierSide" 
+        keys ("UUID_RA_DAILY_HEAD");
+    "CONTRACT_MANAGEMENT"."V_CONTRACT_TO_CS" as "ViewContractToCs" 
+       keys("CodFornitore");
+    "CONTRACT_MANAGEMENT"."V_ODM_OPERATIONS" as "ViewOdmOperations" 
+       keys("IdOdm", "IdOdmOperation"); 
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACT_SUPERVISORS" as "ViewRelContractSupervisors" 
+       keys("Plant");
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACT_SUPERVISORS_FOR_MANAGE_GDL" as "ViewRelContractSupervisorsForGdl" 
+       keys("Plant");
+    "CONTRACT_MANAGEMENT"."V_WORKERS" as "ViewWorkers" 
+       keys("IdWorker"); 
+    "CONTRACT_MANAGEMENT"."V_REL_SUPPLIER_WORKER" as "ViewRelSupplierToWorkers"
+       keys("IdSupplier");
+    /*"CONTRACT_MANAGEMENT"."V_REL_SUPPLIER_DOCUMENT" as "ViewRelSupplierToDocuments"
+       keys("IdSupplier");*/
+    "CONTRACT_MANAGEMENT"."V_REL_SUPPLIER_DOCUMENT" as "ViewRelDocumentToSupplier"  
+       keys("IdDocument");
+    /*"CONTRACT_MANAGEMENT"."V_DOCUMENTS" as "ViewDocuments"
+       keys("IdDocument");*/
+    "CONTRACT_MANAGEMENT"."V_REL_WORKER_CONTRACTS" as "ViewRelWorkerToContracts"
+       keys("IdWorker");  
+    "CONTRACT_MANAGEMENT"."V_REL_WORKER_DOCUMENTS" as "ViewRelWorkerToDocuments"  
+       keys("IdWorker");
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACTS" as "ViewRelContracts"
+       keys("IdContract");
+    "CONTRACT_MANAGEMENT"."V_REL_WORKER_QUALIFICATIONS" as "ViewRelWorkerQualifications"
+       keys("IdWorker");
+    "CONTRACT_MANAGEMENT"."V_REL_WORKER_ROLES" as "ViewRelWorkerRoles" 
+       keys("IdWorker");
+    "CONTRACT_MANAGEMENT"."V_REL_SUPPLIER_VEHICLES" as "ViewRelSupplierVehicles" 
+       keys("IdVehicles");    
+     "CONTRACT_MANAGEMENT"."V_REL_VEHICLE_DOCUMENT" as "ViewRelVehiclesDocument"
+       keys("IdVehicle");
+     "CONTRACT_MANAGEMENT"."V_REL_VEHICLE_CONTRACTS" as "ViewRelVehiclesToContracts"  
+       keys("IdVehicles");
+       "CONTRACT_MANAGEMENT"."V_REL_SUPPLIER_EQUIPMENT" as "ViewRelSupplierEquipment" 
+       keys("IdEquipment");     
+     "CONTRACT_MANAGEMENT"."V_REL_EQUIPMENT_DOCUMENT" as "ViewRelEquipmentDocument" 
+       keys("IdEquipment");
+     "CONTRACT_MANAGEMENT"."V_REL_EQUIPMENT_CONTRACTS" as "ViewRelEquipmentToContracts" 
+       keys("IdEquipment"); 
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACTS_SUPPLIERS_CS1" as "ViewRelContractsSuppliersCs1" //View for main tabele of cotract association  application
+       keys("IdContract");
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACT_DOCUMENTS" as "ViewRelContractDocuments"
+       keys("IdContract"); 
+    "CONTRACT_MANAGEMENT"."V_REL_CONTRACT_MAXIMAL" as "ViewRelContractMaximal"
+        keys("IdDocument");  
+    "CONTRACT_MANAGEMENT"."V_REL_USER_TO_UB_TO_AFNAM" as "ViewRelUserToUbToAfnam"
+        keys("Username");
+    "CONTRACT_MANAGEMENT"."V_WORKER_ROLES" as "ViewWorkerRoles"
+        keys("ruoloKey"); 
+    "CONTRACT_MANAGEMENT"."V_QUALIFICATIONS" as "ViewQualifications" 
+        keys("qualificaKey"); 
+    "CONTRACT_MANAGEMENT"."V_REL_PLANT_COMMON_DOC" as "ViewRelPlantCommonDoc"
+        keys("IdCommonDocument");
+    "CONTRACT_MANAGEMENT"."V_REL_GROUP_SUPERVISORS" as "ViewRelGroupSupervisor" 
+        keys("IdGroup"); 
+        "CONTRACT_MANAGEMENT"."V_RA_DAILY_HEAD_FOR_CALENDAR_GDL" as "ViewRaDailyHeadForCalendarGdL" 
+        keys("UUID_RA_DAILY_HEAD");
+        "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_WORKER_NONCORE" as "ViewRaWorkerNonCore"
+        keys("UUID_RA_DAILY_HEAD_WORKER");
+        "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_VEHICLE_NONCORE" as "ViewRaVehicleNonCore"
+        keys("UUID_RA_DAILY_HEAD_VEHICLE");
+        "CONTRACT_MANAGEMENT"."V_RA_DAILY_DETAIL_EQUIPMENT_NONCORE" as "ViewRaEquipmentNonCore"
+        keys("UUID_RA_DAILY_HEAD_EQUIPMENT");
+        /* Subappalti */  
+    "CONTRACT_MANAGEMENT"."V_CONTATTO_MAIL" as "ViewContattoMail" 
+        keys ("ID_CONTRACT","ID_UNIQUE_SUP");
+    "CONTRACT_MANAGEMENT"."V_GDL_FOR_CALENDAR_GDL" as "ViewGdLForCalendarGdL"
+        keys ("UUID_GDL");
+}

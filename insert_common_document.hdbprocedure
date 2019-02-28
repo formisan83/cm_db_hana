@@ -1,0 +1,28 @@
+PROCEDURE "CONTRACT_MANAGEMENT"."contractManagement::insert_common_document"(
+		IN row "CONTRACT_MANAGEMENT"."COMMON_DOCUMENTS",
+		OUT error "CONTRACT_MANAGEMENT"."TT_ERROR"
+	)
+	LANGUAGE SQLSCRIPT 
+	SQL SECURITY INVOKER  
+	READS SQL DATA 
+AS 
+BEGIN  
+ 
+    DECLARE lv_idContract STRING;
+    DECLARE lv_idFornitore STRING;
+    DECLARE CURSOR c_cursor1 FOR SELECT * FROM :row;
+    
+    FOR ls_commonDoc AS c_cursor1 DO
+    
+    SELECT "CONTRACT_MANAGEMENT"."CONTRACTS"."ID_CONTRACT", "CONTRACT_MANAGEMENT"."CONTRACTS"."ID_SUPPLIER"
+            	INTO lv_idContract, lv_idFornitore
+            	FROM "CONTRACT_MANAGEMENT"."CONTRACTS"; 
+            	
+    END FOR;
+            		
+    
+    if 1 = 2 then
+      error = SELECT 200 AS http_status_code, '' AS error_message, '' AS detail FROM dummy;
+    end if;
+
+END; 

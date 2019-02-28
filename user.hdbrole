@@ -1,0 +1,6 @@
+role contractManagement::user
+{
+
+application privilege: "contractManagement::Execute";
+
+}
